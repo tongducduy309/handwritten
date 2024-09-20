@@ -1,0 +1,9 @@
+<div nz-row class="home" nzJustify="center">
+  <div class="form" nz-col nzSpan="24" >
+
+    <input nz-input placeholder="Nhập Mã Mời" [(ngModel)]="code" type="text" (keyup.enter)="confirm()"/>
+    <div class="group">
+      <button nz-button nzType="primary" style="margin-right: 10px;" (click)="confirm()">XÁC NHẬN</button>
+    </div>
+  </div>
+</div>

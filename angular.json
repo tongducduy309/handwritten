@@ -71,10 +71,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "Handwritten_admin:build:production"
+              "browserTarget": "Handwritten:build:production"
             },
             "development": {
-              "browserTarget": "Handwritten_admin:build:development"
+              "browserTarget": "Handwritten:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -82,7 +82,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Handwritten_admin:build"
+            "browserTarget": "Handwritten:build"
           }
         },
         "test": {

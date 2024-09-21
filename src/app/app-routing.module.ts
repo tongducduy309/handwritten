@@ -1,26 +1,25 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
-import { LoginComponent } from './pages/login/login.component';
 import { AdminComponent } from './pages/admin/admin.component';
-import { UploadComponent } from './pages/upload/upload.component';
 
 const routes: Routes = [
   {
-    path:'',
+    path:'home',
     component:HomeComponent
   },
   {
-    path:'login',
-    component:LoginComponent
+    path:'',
+    redirectTo:'/home',
+    pathMatch: 'full' ,
   },
   {
     path:'admin',
     component:AdminComponent
   },
   {
-    path:'admin/upload',
-    component:UploadComponent
+    path:'admin/:param',
+    component:AdminComponent
   }
 ];
 

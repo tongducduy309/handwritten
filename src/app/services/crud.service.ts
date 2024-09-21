@@ -6,7 +6,7 @@ import { Observable, map } from 'rxjs';
   providedIn: 'root'
 })
 export class CrudService {
-  users!: Observable<any[]>;
+  images!: Observable<any[]>;
   constructor(private firestore:AngularFirestore) {
 
   }
@@ -59,9 +59,9 @@ export class CrudService {
   }
 
 
-  getUsers(){
-    if (!this.users)
-      this.users=this.getDataChange('users');
-      return this.users;
+  getImages(){
+    if (!this.images)
+      this.images=this.getDataChange('images');
+      return this.images;
   }
 }

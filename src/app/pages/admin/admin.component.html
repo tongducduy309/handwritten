@@ -1,1 +1,33 @@
-<p>admin works!</p>
+<div nz-row class="admin" nzJustify="center">
+  <div class="form" nz-col nzSpan="24" >
+    <span>Chờ xác thực: <strong>{{waiting_ver}}</strong></span>
+    <span>Chờ xử lý: <strong>{{waiting}}</strong></span>
+
+    <div class="data" *ngIf="waiting>0">
+      <img nz-image width="400px" height="200px" [nzSrc]="data.img" [nzFallback]="fallback" alt="" />
+      <strong class="label">{{data.label}}</strong>
+      <div class="group">
+        <div style="width: 100%;display: flex;justify-content: space-between;margin-bottom: 10px;">
+
+          <button nz-button nz-tooltip nzTooltipTitle="Xác thực lại" nzType="primary" style="background-color: #ff4d4f;border: none;" (click)="cancelLabel()"><span nz-icon nzType="close" nzTheme="outline"></span></button>
+          <button nz-button nz-tooltip nzTooltipTitle="Xác nhận dữ liệu đúng" nzType="primary" style="margin-left: 20px;" (click)="confirm()"><span nz-icon nzType="check" nzTheme="outline"></span></button>
+        </div>
+        <button nz-button nz-popconfirm
+        nzPopconfirmTitle="Xóa vĩnh viễn?"
+        nzOkText="Có"
+        nzCancelText="Không"
+        (nzOnConfirm)="deleteData()" nzType="default" style="width: 100%;">HỦY BỎ</button>
+
+      </div>
+    </div>
+    <!-- <strong *ngIf="waiting==0">Hiện tại không có dữ liệu cần xác thực</strong> -->
+    <input style="display: none;" multiple accept="image/*" type="file" (change)="onFilesSelected($event)" #chooseFile>
+    <div class="btnDragAndDrop" (click)="chooseFile.click()" style="display: flex;flex-direction: column;">
+       <span nz-icon nzType="upload" nzTheme="outline" style="margin-bottom: 20px;font-size: 30px;"></span>
+       <span>TẢI ẢNH LÊN</span>
+    </div>
+    <!-- <button nz-button nzType="primary" nzShape="round" (click)="download()"><span nz-icon nzType="download"></span> TẢI DỮ LIỆU ĐÃ XÁC THỰC</button> -->
+  </div>
+
+
+</div>

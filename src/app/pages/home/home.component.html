@@ -1,11 +1,12 @@
 <div nz-row class="home" nzJustify="center">
   <div class="form" nz-col nzSpan="24" >
+    <span>Chờ xác thực: <strong>{{waiting_ver}}</strong></span>
     <img nz-image width="400px" height="200px" [nzSrc]="data.img" [nzFallback]="fallback" alt="" />
     <span style="color: #ff4d4f;"><strong>CHÚ Ý:</strong> Nhập kí tự liền mạch không có khoảng cách</span>
     <input nz-input placeholder="Điền kí tự ở đây" [(ngModel)]="value" type="text" (keyup.enter)="confirm()"/>
     <div class="group">
       <button nz-button nzType="primary" style="margin-right: 10px;" (click)="confirm()">XÁC NHẬN</button>
-      <button nz-button nzType="primary"><span nz-icon [nzType]="'sync'" [nzSpin]="true" (click)="changeData()"></span></button>
+      <button nz-button nzType="primary" (click)="nextData()"><span nz-icon [nzType]="'sync'" [nzSpin]="true"></span></button>
     </div>
   </div>
 </div>

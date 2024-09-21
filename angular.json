@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Handwritten_admin": {
+    "handwritten": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -71,10 +71,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "Handwritten:build:production"
+              "browserTarget": "handwritten:build:production"
             },
             "development": {
-              "browserTarget": "Handwritten:build:development"
+              "browserTarget": "handwritten:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -82,7 +82,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Handwritten:build"
+            "browserTarget": "handwritten:build"
           }
         },
         "test": {

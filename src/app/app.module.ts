@@ -12,7 +12,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from './environment';
-import { LoginComponent } from './pages/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
 import { UploadComponent } from './pages/upload/upload.component';
 import { AdminComponent } from './pages/admin/admin.component';
@@ -21,12 +20,14 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzImageModule } from 'ng-zorro-antd/image';
 import { NzGridModule } from 'ng-zorro-antd/grid';
+import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzModalModule } from 'ng-zorro-antd/modal';
 
 registerLocaleData(en);
 
 export let pages = [
   AppComponent,
-  LoginComponent,
   HomeComponent,
   UploadComponent,
   AdminComponent
@@ -45,11 +46,16 @@ export let pages = [
     NzButtonModule,
     NzIconModule,
     NzImageModule,
-    NzGridModule
+    NzGridModule,
+    NzPopconfirmModule,
+    NzToolTipModule,
+    NzModalModule
   ],
   providers: [
     { provide: NZ_I18N, useValue: en_US }
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+
+ }

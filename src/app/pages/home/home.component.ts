@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CrudService } from 'src/app/services/crud.service';
 import { getStorage, ref, getDownloadURL } from "firebase/storage";
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-home',
@@ -21,13 +22,26 @@ export class HomeComponent implements OnInit {
   waiting_ver =0
 
   index =0
-  constructor (private crud:CrudService){
+  constructor (private crud:CrudService, private http: HttpClient){
 
   }
 
   ngOnInit(): void {
+    // this.callAPI()
     this.getImages()
   }
+
+  // async callAPI(){
+  //   fetch('https://api-lovat-nine.vercel.app/hello')
+  //     .then(response => response.text())
+  //     .then(data => {
+  //       this.data = data;
+  //       console.log(data);
+  //     })
+  //     .catch(error => {
+  //       console.error('Error:', error);
+  //     });
+  // }
 
   async getImages(){
     await this.crud.getImages().subscribe((images)=>{
@@ -37,7 +51,7 @@ export class HomeComponent implements OnInit {
        if (image?.label=='')
          this.needVImages.push(image)
      })
-     
+
      this.waiting_ver = this.needVImages.length
      if (this.waiting_ver>0)this.nextData();
 

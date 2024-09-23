@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { AdminComponent } from './pages/admin/admin.component';
+import { HandwritingRecognitionComponent } from './pages/handwriting-recognition/handwriting-recognition.component';
 
 const routes: Routes = [
   {
@@ -20,6 +21,10 @@ const routes: Routes = [
   {
     path:'admin/:param',
     component:AdminComponent
+  },
+  {
+    path:'handwriting-recognition',
+    component:HandwritingRecognitionComponent
   }
 ];
 

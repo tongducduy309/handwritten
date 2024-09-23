@@ -1,5 +1,5 @@
 <div nz-row class="admin" nzJustify="center">
-  <div class="form" nz-col nzSpan="24" >
+  <div *ngIf  = "!downloaded" class="form" nz-col nzSpan="24" >
     <span>Chờ xác thực: <strong>{{waiting_ver}}</strong></span>
     <span>Chờ xử lý: <strong>{{waiting}}</strong></span>
 
@@ -27,7 +27,20 @@
        <span>TẢI ẢNH LÊN</span>
     </div>
     <!-- <button nz-button nzType="primary" nzShape="round" (click)="download()"><span nz-icon nzType="download"></span> TẢI DỮ LIỆU ĐÃ XÁC THỰC</button> -->
-  </div>
 
+
+  </div>
+  <div *ngIf="downloaded" class="form">
+    <nz-result
+      nzStatus="success"
+      nzTitle="ĐÃ TẢI DỮ LIỆU THÀNH CÔNG"
+      nzSubTitle="================"
+    >
+      <div nz-result-extra>
+        <button nz-button nzType="primary" (click)="backToAdmin()">Trở Về Trang Admin</button>
+        <button nz-button (click)="deleteImagesVerified()">Xóa Dữ Liệu Đã Tải</button>
+      </div>
+    </nz-result>
+  </div>
 
 </div>

@@ -13,7 +13,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from './environment';
 import { HomeComponent } from './pages/home/home.component';
-import { UploadComponent } from './pages/upload/upload.component';
 import { AdminComponent } from './pages/admin/admin.component';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzButtonModule } from 'ng-zorro-antd/button';
@@ -23,14 +22,16 @@ import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { NzModalModule } from 'ng-zorro-antd/modal';
+import { HandwritingRecognitionComponent } from './pages/handwriting-recognition/handwriting-recognition.component';
+import { NzResultModule } from 'ng-zorro-antd/result';
 
 registerLocaleData(en);
 
 export let pages = [
   AppComponent,
   HomeComponent,
-  UploadComponent,
-  AdminComponent
+  AdminComponent,
+  HandwritingRecognitionComponent
 ]
 
 @NgModule({
@@ -49,7 +50,9 @@ export let pages = [
     NzGridModule,
     NzPopconfirmModule,
     NzToolTipModule,
-    NzModalModule
+    NzModalModule,
+    NzResultModule
+
   ],
   providers: [
     { provide: NZ_I18N, useValue: en_US }
